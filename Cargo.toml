@@ -4,7 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-env_logger = "0.10.0"
-libp2p = {version="0.51.3", features=["ping", "tcp", "relay","dcutr", "yamux", "tokio", "ed25519", "noise", "identify", "macros", "dns"]}
-log = "0.4.18"
+libp2p = {version="0.51.3", features=["tokio", "tcp", "identify", "noise", "yamux", "relay", "dcutr", "rendezvous", "macros"]}
+libp2p-identity = {version="0.1.2", features=["ed25519"]}
 tokio = {version="1.28.2", features=["full"]}
