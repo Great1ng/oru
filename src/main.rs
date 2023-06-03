@@ -2,7 +2,7 @@ use std::env;
 
 mod node;
 
-const BOOT_NODE_ADDRESS: &str = "/ip4/127.0.0.1/tcp/4001";
+const BOOT_NODE_ADDRESS: &str = "/ip4/34.74.197.69/tcp/80";
 
 #[tokio::main]
 async fn main() {

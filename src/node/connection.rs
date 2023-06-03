@@ -66,25 +66,17 @@ impl<'a> Connection<'a> {
 
                                 self.node.swarm.dial(dial_addr)?;
                             }
-                            break;
                         }
-                    }
-                    rendezvous::client::Event::Registered { .. } => {
-                        println!("Registered!");
-                        break;
                     }
                     rendezvous::client::Event::RegisterFailed(error) => {
                         panic!("Registration failed due to {error}");
                     }
                     _ => {}
                 },
-                // Some(SwarmEvent::ConnectionEstablished { peer_id, endpoint, num_established, concurrent_dial_errors, established_in })
                 Some(event) => println!("{:#?}", event),
                 None => break,
             }
         }
-
-        loop {}
 
         Ok(())
     }
